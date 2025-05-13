@@ -71,18 +71,21 @@ void Roster::addStudentsFromStream(std::istream &is) {
 }
 
 int Roster::getNumStudents() const { 
-  return -999; // stub
+  return numStudents; // stub
 }
 
 Student Roster::getStudentAt(int index) const { 
-  return Student(-999,"Stubbi","Stubsdottir"); 
+  return *students[index]; 
 }
 
 std::string Roster::toString() const {
   std::string result = "{\n";
   
-  result += "STUB!!!!";   // @@@ RESTORE THIS 
-
+  for (int i = 0; i < numStudents; i++) {
+    result += students[i]->toString();  // @@@ RESTORE THIS 
+    if (i < numStudents-1) result += ",";
+    result += "\n";
+  }
   result += "}\n";
   return result;
 

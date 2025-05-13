@@ -1,5 +1,5 @@
-CXX=clang++
-# CXX=g++
+# CXX=clang++
+CXX=g++
 
 # We have -Wno-unused-parameter so that the compiler
 # doesn't complain too much about our stubs.

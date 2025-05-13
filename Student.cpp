@@ -5,7 +5,9 @@
 Student::Student(int perm, 
 		 std::string lastName, 
 		 std::string firstAndMiddleNames) {
-  // stub
+  this->perm = perm;
+  this->lastName = lastName;
+  this->firstAndMiddleNames = firstAndMiddleNames;
 }
 
 // construct a Student object from a single line of
@@ -30,19 +32,19 @@ Student::Student (std::string csvString) {
 
 
 int Student::getPerm() const { 
-  return -999; // stub
+  return perm; // stub
 }
 
 std::string Student::getLastName() const { 
-  return std::string("Stuberson");
+  return lastName;
 }
 
 std::string Student::getFirstAndMiddleNames() const {
-   return std::string("Stub Toe");
+   return firstAndMiddleNames;
 }
 
 std::string Student::getFullName() const { 
-  return std::string("Stub Toe Stuberson");
+  return firstAndMiddleNames + " " + lastName;
 }
 
 std::string Student::toString() const { 
