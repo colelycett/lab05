@@ -97,7 +97,15 @@ void Roster::sortByPerm() {
 }
 
 int Roster::indexOfMaxPermAmongFirstKStudents(int k) const {
-  return 0; // STUB
+  int maxPerm = students[0]->getPerm();
+  int index = 0;
+  for (int i = 0; i < numStudents && i < k; i++) {
+    if (students[i]->getPerm() > maxPerm) {
+      maxPerm = students[i]->getPerm();
+      index = i;
+    }
+  }
+  return index; // STUB
 }
 
 void Roster::sortByPermHelper(int k) {
