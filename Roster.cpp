@@ -93,7 +93,9 @@ std::string Roster::toString() const {
 
 void Roster::sortByPerm() {
   // SELECTION SORT
-  // stub does nothing
+  for (int i = numStudents; i > 0; i--) {
+    sortByPermHelper(i);
+  }
 }
 
 int Roster::indexOfMaxPermAmongFirstKStudents(int k) const {
@@ -105,7 +107,7 @@ int Roster::indexOfMaxPermAmongFirstKStudents(int k) const {
       index = i;
     }
   }
-  return index; // STUB
+  return index; 
 }
 
 void Roster::sortByPermHelper(int k) {
@@ -115,7 +117,6 @@ void Roster::sortByPermHelper(int k) {
   int im = indexOfMaxPermAmongFirstKStudents(k);
 
   // now swap the pointers between index im and index k-1
+  std::swap(students[im], students[k-1]);
 
-  // THIS IS STILL A STUB !!!
-  
 }
